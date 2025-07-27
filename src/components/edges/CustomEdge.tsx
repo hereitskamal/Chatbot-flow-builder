@@ -10,8 +10,6 @@ export function CustomEdge({
   sourceY,
   targetX,
   targetY,
-  sourcePosition,
-  targetPosition,
   style = {},
   markerEnd,
 }: EdgeProps) {
@@ -20,10 +18,8 @@ export function CustomEdge({
   const [edgePath, labelX, labelY] = getStraightPath({
     sourceX,
     sourceY,
-    sourcePosition,
     targetX,
     targetY,
-    targetPosition,
   });
 
   const onEdgeClick = (e: React.MouseEvent) => {
@@ -58,3 +54,4 @@ export function CustomEdge({
     </>
   );
 }
+

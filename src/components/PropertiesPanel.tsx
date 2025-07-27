@@ -110,7 +110,8 @@ export function PropertiesPanel() {
   // Simplified condition properties - ONLY main textarea
   const renderConditionProperties = () => {
     const conditions = selectedNode.data.conditions || [];
-    const conditionCount = conditions.filter(c => c && c.trim()).length;
+    const conditionsArray = Array.isArray(selectedNode.data.conditions) ? selectedNode.data.conditions : [];
+    const conditionCount = conditionsArray.filter(c => c && c.trim()).length;
 
     return (
       <div className="space-y-4">
@@ -150,12 +151,12 @@ Press Enter to add new conditions...`}
           </label>
           <div className="bg-gray-50 rounded-lg p-3 border border-gray-200 max-h-48 overflow-y-auto">
             <div className="text-sm text-gray-700 space-y-2">
-              {conditions.map((condition, index) => (
+              {(conditions as string[])?.map((condition: string, index: number) => (
                 condition && condition.trim() && (
                   <div key={index} className="flex items-center gap-2">
                     <div 
                       className="w-3 h-3 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: `hsl(${(index * 360) / Math.max(conditions.length, 1)}, 60%, 50%)` }}
+                      style={{ backgroundColor: `hsl(${(index * 360) / Math.max((conditions as string[]).length, 1)}, 60%, 50%)` }}
                     ></div>
                     <code className="bg-orange-100 px-2 py-1 rounded text-xs flex-1">
                       "{condition.trim()}"
@@ -483,7 +484,7 @@ Press Enter to add new conditions...`}
                   <div className="flex justify-between">
                     <span className="text-gray-600">Conditions:</span>
                     <span className="font-mono text-xs">
-                      {(selectedNode.data.conditions || []).filter(c => c && c.trim()).length} defined
+                      {(Array.isArray(selectedNode.data.conditions) ? selectedNode.data.conditions : []).filter(c => c && c.trim()).length} defined
                     </span>
                   </div>
                 )}

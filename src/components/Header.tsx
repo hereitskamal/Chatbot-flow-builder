@@ -1,7 +1,6 @@
 // src/components/Header.tsx
 import {
   Save,
-  Download,
   AlertCircle,
   CheckCircle,
   HelpCircle,
@@ -298,7 +297,7 @@ export function Header() {
       )}
 
       {/* Add custom CSS for animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes fade-in {
           from {
             opacity: 0;

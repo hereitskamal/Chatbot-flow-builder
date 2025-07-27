@@ -1,6 +1,6 @@
 // src/components/ExamplesLibrary.tsx
 import { useState } from 'react';
-import { BookOpen, Download, Play, MessageSquare, Users } from 'lucide-react';
+import { BookOpen, Play} from 'lucide-react';
 
 interface FlowExample {
   id: string;

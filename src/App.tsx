@@ -22,7 +22,7 @@ import { Tutorial } from "./components/Tutorial";
 import { SmartHelp } from "./components/SmartHelp";
 import { ContextMenu } from "./components/ContextMenu";
 import { Maximize2, Minimize2, Monitor, Smartphone, Tablet } from "lucide-react";
-import type { Node, Edge } from "@xyflow/react";
+import type { Node } from "@xyflow/react";
 
 import "@xyflow/react/dist/style.css";
 
@@ -231,7 +231,7 @@ function FlowBuilder() {
   );
 
   const onNodeClick = useCallback(
-    (event: React.MouseEvent, node: Node) => {
+    (_event: React.MouseEvent, node: Node) => {
       setSelectedNode(node);
     },
     [setSelectedNode]
@@ -326,7 +326,7 @@ function FlowBuilder() {
               className="!shadow-lg !border-slate-200 !rounded-lg !overflow-hidden !bg-white"
               position="bottom-right"
             />
-            <Background variant="dots" gap={20} size={1} color="#e2e8f0" />
+            <Background variant={undefined} gap={20} size={1} color="#e2e8f0" className="!bg-none" />
           </ReactFlow>
 
           {/* Context Menu */}

@@ -156,14 +156,16 @@ export const useFlowStore = create<FlowState>((set, get) => ({
 
       // Validate message nodes
       if (node.type === "messageNode") {
-        if (!node.data.message || node.data.message.trim().length === 0) {
+        const message = node.data.message as string | undefined;
+        if (!message || message.trim().length === 0) {
           errors.push(`Message node "${node.data.label || node.id}" is empty`);
         }
       }
 
       // Validate input nodes
       if (node.type === "inputNode") {
-        if (!node.data.prompt || node.data.prompt.trim().length === 0) {
+        const prompt = node.data.prompt as string | undefined;
+        if (!prompt || prompt.trim().length === 0) {
           errors.push(
             `Input node "${node.data.label || node.id}" needs a prompt question`
           );

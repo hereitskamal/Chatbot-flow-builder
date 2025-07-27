@@ -9,7 +9,7 @@ interface EndNodeProps {
   selected?: boolean;
 }
 
-export function EndNode({ data, selected }: EndNodeProps) {
+export function EndNode({  selected }: EndNodeProps) {
   return (
     <div className={`px-6 py-4 shadow-lg rounded-xl border-2 transition-all duration-200 ${
       selected ? 'border-red-500 shadow-xl shadow-red-500/20 scale-105' : 'border-red-300 hover:border-red-400 hover:shadow-xl'

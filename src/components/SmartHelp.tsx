@@ -1,6 +1,6 @@
 // src/components/SmartHelp.tsx
 import { useState, useEffect } from 'react';
-import { HelpCircle, Lightbulb, X } from 'lucide-react';
+import {  Lightbulb, X } from 'lucide-react';
 
 interface HelpTip {
   id: string;

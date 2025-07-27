@@ -1,6 +1,6 @@
 // src/components/Tutorial.tsx
 import { useState } from 'react';
-import { Play, ArrowRight, CheckCircle, BookOpen, X } from 'lucide-react';
+import { ArrowRight, CheckCircle, BookOpen, X } from 'lucide-react';
 
 interface TutorialStep {
   id: string;

@@ -9,7 +9,7 @@ interface StartNodeProps {
   selected?: boolean;
 }
 
-export function StartNode({ data, selected }: StartNodeProps) {
+export function StartNode({ selected }: StartNodeProps) {
   return (
     <div className={`px-6 py-4 shadow-lg rounded-xl border-2 transition-all duration-200 ${
       selected ? 'border-green-500 shadow-xl shadow-green-500/20 scale-105' : 'border-green-300 hover:border-green-400 hover:shadow-xl'
